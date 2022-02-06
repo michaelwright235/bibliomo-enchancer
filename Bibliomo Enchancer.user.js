@@ -2,14 +2,14 @@
 // @name         Bibliomo Enchancer
 // @namespace    https://github.com/michaelwright235/bibliomo-enchancer
 // @homepage     https://github.com/michaelwright235/bibliomo-enchancer
-// @version      0.4
+// @version      0.41
 // @description  Bibliomo Enchancer
 // @author       Michael Wright
 // @match        https://bibliomo.ru/cgiopac/opacg/direct.exe
 // @icon         https://www.google.com/s2/favicons?domain=bibliomo.ru
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/michaelwright235/bibliomo-enchancer/main/Bibliomo%20Enchancer.js
-// @updateURL    https://raw.githubusercontent.com/michaelwright235/bibliomo-enchancer/main/Bibliomo%20Enchancer.js
+// @downloadURL  https://raw.githubusercontent.com/michaelwright235/bibliomo-enchancer/main/Bibliomo%20Enchancer.user.js
+// @updateURL    https://raw.githubusercontent.com/michaelwright235/bibliomo-enchancer/main/Bibliomo%20Enchancer.user.js
 // ==/UserScript==
 
 (function() {
