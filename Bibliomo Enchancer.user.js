@@ -6,7 +6,7 @@
 // @description  Bibliomo Enchancer
 // @author       Michael Wright
 // @match        https://bibliomo.ru/cgiopac/opacg/direct.exe
-// @icon         https://www.google.com/s2/favicons?domain=bibliomo.ru
+// @icon         https://bibliomo.ru/local/templates/bibliomo/favicon.ico
 // @grant        none
 // @downloadURL  https://raw.githubusercontent.com/michaelwright235/bibliomo-enchancer/main/Bibliomo%20Enchancer.user.js
 // @updateURL    https://raw.githubusercontent.com/michaelwright235/bibliomo-enchancer/main/Bibliomo%20Enchancer.user.js
