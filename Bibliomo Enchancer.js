@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bibliomo Enchancer
 // @namespace    https://github.com/michaelwright235
-// @version      0.3
+// @version      0.35
 // @description  Bibliomo Enchancer
 // @author       Michael Wright
 // @match        https://bibliomo.ru/cgiopac/opacg/direct.exe
@@ -18,9 +18,9 @@
   margin-left: 15px;
 }
 
-/* The Modal (background) */
+/* Модальное окно (фон) */
 #bmoModalDialog {
-  display: none; /* Hidden by default */
+  display: none; /* Скрыто по-умолчанию, потом - flex */
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -30,16 +30,16 @@
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content/Box */
+/* Модальное окно */
 #bmoModalDialog-contentWrapper {
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  width: 70%; /* Could be more or less, depending on screen size */
+  width: 70%;
 }
 
 #bmoModalDialog-content {
@@ -51,6 +51,15 @@
   width: 100%;
 }
 
+
+#bmoModalDialog-content table {
+  width: 100%;
+}
+
+#bmoModalDialog-content tr:nth-child(even) {
+  background: #e3e3e3;
+}
+
 #bmoModalDialog-content td {
   width: 50%;
 }
@@ -60,15 +69,16 @@
   margin: 0;
 }
 #bmoModalDialog-content button {
-  margin-top:20px;
+  margin-top: 20px;
 }
 
-/* The Close Button */
+/* Кнопка закрыть */
 #bmoModalDialogClose {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  padding-left: 10px;
 }
 
 #bmoModalDialogClose:hover,
@@ -129,7 +139,7 @@ body, html {
     let modalDialog = document.getElementById("bmoModalDialog");
     let modalDialogContent = document.getElementById("bmoModalDialog-content");
     let modalDialogCloseBtn = document.getElementById("bmoModalDialogClose");
-    modalDialogCloseBtn.onclick = function() {modalDialog.style.display = "none";};
+    modalDialogCloseBtn.onclick = () => {modalDialog.style.display = "none"};
     window.onclick = function(event) {
         if (event.target == modalDialog) {
             modalDialog.style.display = "none";
@@ -167,7 +177,7 @@ body, html {
         btn.type = "button";
         btn.textContent = "Редактировать подполя";
         btn.onclick = () => editButtonClick(btn);
-      return btn;
+        return btn;
     }
 
     // Действие при нажатии кнопки редактирования подполей
@@ -206,6 +216,7 @@ body, html {
         modalDialogContent.innerHTML = ""; // очищаем окно
         let formElement = document.createElement("form");
         formElement.name = "bmoFields";
+        formElement.autocomplete = "off";
 
         // Создаем таблицу со всеми полями и значениями
         let table = document.createElement("table");
@@ -240,7 +251,7 @@ body, html {
         submitButton.className = "white_button";
         submitButton.type = "button";
         submitButton.textContent = "Применить изменения";
-        submitButton.onclick = function() {applyChanges(editButton)};
+        submitButton.onclick = () => applyChanges(editButton);
         formElement.append(submitButton);
 
         modalDialogContent.append(formElement);
